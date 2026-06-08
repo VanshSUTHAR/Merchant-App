@@ -1,0 +1,1322 @@
+{
+  "AgentID": {
+    "page": 1,
+    "x": 425.313,
+    "y": 709.107,
+    "width": 73.644,
+    "height": 13.516000000000076,
+    "type": "/Tx"
+  },
+  "SiteInspection": {
+    "page": 1,
+    "x": 549.221,
+    "y": 714.993,
+    "width": 3.8179999999999836,
+    "height": 3.7469999999999573,
+    "type": "/Btn"
+  },
+  "LegalBusinessName": {
+    "page": 1,
+    "x": 24.3035,
+    "y": 666.568,
+    "width": 167.86849999999998,
+    "height": 13.680000000000064,
+    "type": "/Tx"
+  },
+  "BusinessTaxIDType": {
+    "page": 1,
+    "x": 273.701,
+    "y": 682.177,
+    "width": 4.303999999999974,
+    "height": 4.249000000000024,
+    "type": "/Btn"
+  },
+  "BusinessTaxID": {
+    "page": 1,
+    "x": 192.419,
+    "y": 666.595,
+    "width": 111.40899999999996,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "DBA": {
+    "page": 1,
+    "x": 24.2217,
+    "y": 642.501,
+    "width": 206.3013,
+    "height": 13.680000000000064,
+    "type": "/Tx"
+  },
+  "TimeInBusiness": {
+    "page": 1,
+    "x": 230.697,
+    "y": 642.501,
+    "width": 73.195,
+    "height": 13.680000000000064,
+    "type": "/Tx"
+  },
+  "LegalStreetAddress": {
+    "page": 1,
+    "x": 24.3035,
+    "y": 618.603,
+    "width": 279.57050000000004,
+    "height": 13.680000000000064,
+    "type": "/Tx"
+  },
+  "LegalCity": {
+    "page": 1,
+    "x": 24.3109,
+    "y": 594.567,
+    "width": 143.7931,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "LegalState": {
+    "page": 1,
+    "x": 168.308,
+    "y": 594.567,
+    "width": 48.94900000000001,
+    "height": 13.67999999999995,
+    "type": "/Ch"
+  },
+  "LegalZIP": {
+    "page": 1,
+    "x": 217.54,
+    "y": 594.595,
+    "width": 86.28999999999999,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "MailingSameAsLegal": {
+    "page": 1,
+    "x": 78.2082,
+    "y": 586.125,
+    "width": 4.358099999999993,
+    "height": 4.303999999999974,
+    "type": "/Btn"
+  },
+  "BillingStreetAddress": {
+    "page": 1,
+    "x": 24.2961,
+    "y": 570.592,
+    "width": 279.53889999999996,
+    "height": 13.680000000000064,
+    "type": "/Tx"
+  },
+  "BillingCity": {
+    "page": 1,
+    "x": 24.2671,
+    "y": 546.573,
+    "width": 143.8529,
+    "height": 13.680000000000064,
+    "type": "/Tx"
+  },
+  "BillingState": {
+    "page": 1,
+    "x": 168.296,
+    "y": 546.6,
+    "width": 48.986999999999995,
+    "height": 13.67999999999995,
+    "type": "/Ch"
+  },
+  "BillingZIP": {
+    "page": 1,
+    "x": 217.538,
+    "y": 546.6,
+    "width": 86.30199999999996,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "PhysicalSame": {
+    "page": 1,
+    "x": 159.139,
+    "y": 538.181,
+    "width": 4.385999999999996,
+    "height": 4.24899999999991,
+    "type": "/Btn"
+  },
+  "PhysicalStreetAddress": {
+    "page": 1,
+    "x": 24.2803,
+    "y": 522.609,
+    "width": 279.56669999999997,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "PhysicalCity": {
+    "page": 1,
+    "x": 24.2985,
+    "y": 498.562,
+    "width": 143.79250000000002,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "PhysicalState": {
+    "page": 1,
+    "x": 168.33,
+    "y": 498.589,
+    "width": 48.960999999999984,
+    "height": 13.680000000000007,
+    "type": "/Ch"
+  },
+  "PhysicalZIP": {
+    "page": 1,
+    "x": 217.519,
+    "y": 498.562,
+    "width": 86.29899999999998,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "WebsiteURL": {
+    "page": 1,
+    "x": 24.2764,
+    "y": 474.596,
+    "width": 279.5376,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "CustomerServicePhoneNumber": {
+    "page": 1,
+    "x": 24.2706,
+    "y": 450.612,
+    "width": 100.3074,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "CustomerServiceEmailAddress": {
+    "page": 1,
+    "x": 124.749,
+    "y": 450.612,
+    "width": 179.07000000000002,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "TypeOfOwnership": {
+    "page": 1,
+    "x": 199.126,
+    "y": 432.915,
+    "width": 3.7639999999999816,
+    "height": 3.801999999999964,
+    "type": "/Btn"
+  },
+  "PrivateOrPublic": {
+    "page": 1,
+    "x": 256.056,
+    "y": 432.984,
+    "width": 3.737000000000023,
+    "height": 3.775000000000034,
+    "type": "/Btn"
+  },
+  "AcceptedPreviously?": {
+    "page": 1,
+    "x": 178.792,
+    "y": 402.61,
+    "width": 3.8189999999999884,
+    "height": 3.747000000000014,
+    "type": "/Btn"
+  },
+  "AcceptVisa?": {
+    "page": 1,
+    "x": 28.9197,
+    "y": 379.452,
+    "width": 3.7909000000000006,
+    "height": 3.802000000000021,
+    "type": "/Btn"
+  },
+  "AcceptPINDebit?": {
+    "page": 1,
+    "x": 148.203,
+    "y": 379.438,
+    "width": 3.8460000000000036,
+    "height": 3.8290000000000077,
+    "type": "/Btn"
+  },
+  "AcceptEBT?": {
+    "page": 1,
+    "x": 187.076,
+    "y": 379.467,
+    "width": 3.76400000000001,
+    "height": 3.774000000000001,
+    "type": "/Btn"
+  },
+  "EBTFSNNumber": {
+    "page": 1,
+    "x": 213.933,
+    "y": 373.854,
+    "width": 89.86200000000002,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "LimitCards": {
+    "page": 1,
+    "x": 28.9439,
+    "y": 364.638,
+    "width": 3.7363,
+    "height": 3.775000000000034,
+    "type": "/Btn"
+  },
+  "VisaMCMonthlyVolume": {
+    "page": 1,
+    "x": 33.8197,
+    "y": 337.172,
+    "width": 86.31230000000001,
+    "height": 12.419999999999959,
+    "type": "/Tx"
+  },
+  "HighestTransactionAmount": {
+    "page": 1,
+    "x": 129.541,
+    "y": 337.145,
+    "width": 82.44,
+    "height": 12.420000000000016,
+    "type": "/Tx"
+  },
+  "AverageTransactionAmount": {
+    "page": 1,
+    "x": 221.759,
+    "y": 337.145,
+    "width": 82.02799999999999,
+    "height": 12.420000000000016,
+    "type": "/Tx"
+  },
+  "ProductDescription": {
+    "page": 1,
+    "x": 24.2136,
+    "y": 294.649,
+    "width": 279.57640000000004,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "SalesProfileRetailPercentage": {
+    "page": 1,
+    "x": 24.2369,
+    "y": 257.673,
+    "width": 42.84890000000001,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "SalesProfileInternetPercentage": {
+    "page": 1,
+    "x": 80.9824,
+    "y": 257.673,
+    "width": 37.1666,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "SalesProfileMOTOPercentage": {
+    "page": 1,
+    "x": 133.533,
+    "y": 257.673,
+    "width": 39.741000000000014,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "SalesProfileOtherPercentage": {
+    "page": 1,
+    "x": 186.022,
+    "y": 257.7,
+    "width": 41.59400000000002,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "SalesProfileStoredPercentage": {
+    "page": 1,
+    "x": 242.838,
+    "y": 257.673,
+    "width": 46.912000000000006,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "CustomerProfileIndividualConsumers": {
+    "page": 1,
+    "x": 24.2369,
+    "y": 220.719,
+    "width": 79.21610000000001,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "CustomerProfileBusinesses": {
+    "page": 1,
+    "x": 120.34,
+    "y": 220.719,
+    "width": 75.768,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "CustomerProfileGovernment": {
+    "page": 1,
+    "x": 212.122,
+    "y": 220.692,
+    "width": 78.75799999999998,
+    "height": 13.35299999999998,
+    "type": "/Tx"
+  },
+  "DelayedDelivery": {
+    "page": 1,
+    "x": 228.313,
+    "y": 202.194,
+    "width": 4.277000000000015,
+    "height": 4.304000000000002,
+    "type": "/Btn"
+  },
+  "Warranty?": {
+    "page": 1,
+    "x": 149.313,
+    "y": 171.188,
+    "width": 3.9540000000000077,
+    "height": 3.9110000000000014,
+    "type": "/Btn"
+  },
+  "WarrantyDuration": {
+    "page": 1,
+    "x": 24.2428,
+    "y": 142.724,
+    "width": 279.5332,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "RefundPolicyDescription": {
+    "page": 1,
+    "x": 24.2329,
+    "y": 118.717,
+    "width": 279.5031,
+    "height": 13.679999999999993,
+    "type": "/Tx"
+  },
+  "FulfillmentHouse?": {
+    "page": 1,
+    "x": 133.925,
+    "y": 100.763,
+    "width": 4.329999999999984,
+    "height": 4.302999999999997,
+    "type": "/Btn"
+  },
+  "Affiliatemarketing?": {
+    "page": 1,
+    "x": 203.344,
+    "y": 100.406,
+    "width": 4.304000000000002,
+    "height": 4.329999999999998,
+    "type": "/Btn"
+  },
+  "Tobacco/Vape": {
+    "page": 1,
+    "x": 28.9812,
+    "y": 58.9745,
+    "width": 4.221800000000002,
+    "height": 4.1126000000000005,
+    "type": "/Btn"
+  },
+  "DebtRepayment": {
+    "page": 1,
+    "x": 96.7183,
+    "y": 58.9159,
+    "width": 4.112700000000004,
+    "height": 4.194600000000001,
+    "type": "/Btn"
+  },
+  "Events": {
+    "page": 1,
+    "x": 166.381,
+    "y": 58.925,
+    "width": 4.139999999999986,
+    "height": 4.1673000000000044,
+    "type": "/Btn"
+  },
+  "CBD Products": {
+    "page": 1,
+    "x": 29.0127,
+    "y": 49.6128,
+    "width": 4.140000000000004,
+    "height": 4.167400000000001,
+    "type": "/Btn"
+  },
+  "RecurringBilling": {
+    "page": 1,
+    "x": 96.7165,
+    "y": 49.637,
+    "width": 4.139499999999998,
+    "height": 4.167299999999997,
+    "type": "/Btn"
+  },
+  "ContactFirstName": {
+    "page": 1,
+    "x": 308.285,
+    "y": 666.375,
+    "width": 155.625,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "ContactLastName": {
+    "page": 1,
+    "x": 463.815,
+    "y": 666.375,
+    "width": 123.99499999999995,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "ContactPhoneNumber": {
+    "page": 1,
+    "x": 308.096,
+    "y": 642.805,
+    "width": 105.19200000000001,
+    "height": 13.680000000000064,
+    "type": "/Tx"
+  },
+  "ContactEmailAddress": {
+    "page": 1,
+    "x": 413.291,
+    "y": 642.805,
+    "width": 174.728,
+    "height": 13.680000000000064,
+    "type": "/Tx"
+  },
+  "NoOwner": {
+    "page": 1,
+    "x": 345.047,
+    "y": 598.901,
+    "width": 4.120999999999981,
+    "height": 4.074000000000069,
+    "type": "/Btn"
+  },
+  "Owner1FirstName": {
+    "page": 1,
+    "x": 308.286,
+    "y": 556.679,
+    "width": 163.688,
+    "height": 13.680000000000064,
+    "type": "/Tx"
+  },
+  "Owner1LastName": {
+    "page": 1,
+    "x": 472.242,
+    "y": 556.679,
+    "width": 115.618,
+    "height": 13.680000000000064,
+    "type": "/Tx"
+  },
+  "DateofBirth": {
+    "page": 1,
+    "x": 308.333,
+    "y": 532.696,
+    "width": 79.01599999999996,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "SocialSecurity": {
+    "page": 1,
+    "x": 387.591,
+    "y": 532.668,
+    "width": 112.50599999999997,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "Owner1Percent": {
+    "page": 1,
+    "x": 500.352,
+    "y": 532.696,
+    "width": 74.71699999999998,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "Owner1HomeStreetAddress": {
+    "page": 1,
+    "x": 308.313,
+    "y": 508.666,
+    "width": 279.54100000000005,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "Owner1HomeCity": {
+    "page": 1,
+    "x": 308.311,
+    "y": 484.676,
+    "width": 143.79000000000002,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "Owner1HomeState": {
+    "page": 1,
+    "x": 452.347,
+    "y": 484.676,
+    "width": 47.76400000000001,
+    "height": 13.680000000000007,
+    "type": "/Ch"
+  },
+  "Owner1HomeZIP": {
+    "page": 1,
+    "x": 500.354,
+    "y": 484.704,
+    "width": 87.51400000000007,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "Owner2FirstName": {
+    "page": 1,
+    "x": 308.326,
+    "y": 447.683,
+    "width": 163.68699999999995,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "Owner2LastName": {
+    "page": 1,
+    "x": 472.255,
+    "y": 447.683,
+    "width": 115.64499999999998,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "DateofBirth2": {
+    "page": 1,
+    "x": 308.346,
+    "y": 423.669,
+    "width": 78.988,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "SocialSecurity2": {
+    "page": 1,
+    "x": 387.603,
+    "y": 423.642,
+    "width": 112.56099999999998,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "Owner2Percent": {
+    "page": 1,
+    "x": 500.353,
+    "y": 423.642,
+    "width": 76.66400000000004,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "Owner2HomeStreetAddress": {
+    "page": 1,
+    "x": 308.352,
+    "y": 399.669,
+    "width": 279.54200000000003,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "Owner2HomeCity": {
+    "page": 1,
+    "x": 308.323,
+    "y": 375.679,
+    "width": 143.817,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "Owner2HomeState": {
+    "page": 1,
+    "x": 452.307,
+    "y": 375.679,
+    "width": 47.78899999999999,
+    "height": 13.680000000000007,
+    "type": "/Ch"
+  },
+  "Owner2HomeZIP": {
+    "page": 1,
+    "x": 500.339,
+    "y": 375.652,
+    "width": 87.59700000000004,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "25Owner?": {
+    "page": 1,
+    "x": 333.053,
+    "y": 357.946,
+    "width": 4.036999999999978,
+    "height": 4.046999999999969,
+    "type": "/Btn"
+  },
+  "SameAsOwner": {
+    "page": 1,
+    "x": 370.775,
+    "y": 309.882,
+    "width": 4.086000000000013,
+    "height": 4.004000000000019,
+    "type": "/Btn"
+  },
+  "OfficerFirstName": {
+    "page": 1,
+    "x": 308.234,
+    "y": 281.575,
+    "width": 164.074,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "OfficerLastName": {
+    "page": 1,
+    "x": 472.559,
+    "y": 281.575,
+    "width": 115.22199999999992,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "DateofBirthOfficer": {
+    "page": 1,
+    "x": 308.228,
+    "y": 257.547,
+    "width": 84.36000000000001,
+    "height": 13.67999999999995,
+    "type": "/Tx"
+  },
+  "SocialSecurityOfficer": {
+    "page": 1,
+    "x": 392.858,
+    "y": 257.574,
+    "width": 194.86600000000004,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "OfficerHomeStreetAddress": {
+    "page": 1,
+    "x": 308.234,
+    "y": 233.79,
+    "width": 279.541,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "OfficerHomeCity": {
+    "page": 1,
+    "x": 308.22,
+    "y": 211.172,
+    "width": 141.93599999999998,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "OfficerHomeState": {
+    "page": 1,
+    "x": 450.391,
+    "y": 211.172,
+    "width": 47.74799999999999,
+    "height": 13.680000000000007,
+    "type": "/Ch"
+  },
+  "OfficerHomeZIP": {
+    "page": 1,
+    "x": 498.392,
+    "y": 211.172,
+    "width": 89.37600000000003,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "TierSettingsHighTier": {
+    "page": 2,
+    "x": 28.9732,
+    "y": 688.568,
+    "width": 4.030900000000003,
+    "height": 4.004000000000019,
+    "type": "/Btn"
+  },
+  "TierSettingsSub-Qualified": {
+    "page": 2,
+    "x": 28.9816,
+    "y": 679.532,
+    "width": 4.058100000000003,
+    "height": 4.030999999999949,
+    "type": "/Btn"
+  },
+  "TieredQualifiedPercentage": {
+    "page": 2,
+    "x": 248.52,
+    "y": 711.62,
+    "width": 27.741000000000014,
+    "height": 13.817000000000007,
+    "type": "/Tx"
+  },
+  "TieredQualifiedPerItem": {
+    "page": 2,
+    "x": 296.034,
+    "y": 711.593,
+    "width": 29.704999999999984,
+    "height": 13.817000000000007,
+    "type": "/Tx"
+  },
+  "TieredMidQualifiedPercentage": {
+    "page": 2,
+    "x": 248.52,
+    "y": 697.647,
+    "width": 27.741000000000014,
+    "height": 13.7349999999999,
+    "type": "/Tx"
+  },
+  "TieredMidQualifiedPerItem": {
+    "page": 2,
+    "x": 296.034,
+    "y": 697.647,
+    "width": 29.704999999999984,
+    "height": 13.7349999999999,
+    "type": "/Tx"
+  },
+  "TieredNonQualifiedPercentage": {
+    "page": 2,
+    "x": 248.52,
+    "y": 683.56,
+    "width": 27.741000000000014,
+    "height": 13.816000000000031,
+    "type": "/Tx"
+  },
+  "TieredNonQualifiedPerItem": {
+    "page": 2,
+    "x": 296.034,
+    "y": 683.642,
+    "width": 29.704999999999984,
+    "height": 13.761999999999944,
+    "type": "/Tx"
+  },
+  "TieredSubQualifiedPercentage": {
+    "page": 2,
+    "x": 248.52,
+    "y": 669.64,
+    "width": 27.741000000000014,
+    "height": 13.762000000000057,
+    "type": "/Tx"
+  },
+  "TieredSubQualifiedPerItem": {
+    "page": 2,
+    "x": 296.088,
+    "y": 669.64,
+    "width": 29.70599999999996,
+    "height": 13.735000000000014,
+    "type": "/Tx"
+  },
+  "Credit": {
+    "page": 2,
+    "x": 151.087,
+    "y": 631.715,
+    "width": 4.031000000000006,
+    "height": 4.004000000000019,
+    "type": "/Btn"
+  },
+  "OtherPricingCreditPercentage": {
+    "page": 2,
+    "x": 248.511,
+    "y": 627.369,
+    "width": 27.79600000000002,
+    "height": 13.735000000000014,
+    "type": "/Tx"
+  },
+  "OtherPricingCreditPerItem": {
+    "page": 2,
+    "x": 297.948,
+    "y": 627.315,
+    "width": 27.850000000000023,
+    "height": 13.788999999999987,
+    "type": "/Tx"
+  },
+  "OtherPricingSigDebitPercentage": {
+    "page": 2,
+    "x": 248.539,
+    "y": 613.397,
+    "width": 27.76800000000003,
+    "height": 13.706999999999994,
+    "type": "/Tx"
+  },
+  "OtherPricingSigDebitPerItem": {
+    "page": 2,
+    "x": 297.948,
+    "y": 613.378,
+    "width": 27.87700000000001,
+    "height": 13.735000000000014,
+    "type": "/Tx"
+  },
+  "PinDebit": {
+    "page": 2,
+    "x": 115.98,
+    "y": 603.699,
+    "width": 4.084999999999994,
+    "height": 4.031000000000063,
+    "type": "/Btn"
+  },
+  "OtherPricingPINDebitPercentage": {
+    "page": 2,
+    "x": 248.536,
+    "y": 599.369,
+    "width": 27.740999999999985,
+    "height": 13.761999999999944,
+    "type": "/Tx"
+  },
+  "OtherPricingPinDebitPerItem": {
+    "page": 2,
+    "x": 297.948,
+    "y": 599.342,
+    "width": 27.850000000000023,
+    "height": 13.844000000000051,
+    "type": "/Tx"
+  },
+  "AuthFee": {
+    "page": 2,
+    "x": 119.714,
+    "y": 533.82,
+    "width": 25.572000000000003,
+    "height": 13.788999999999987,
+    "type": "/Tx"
+  },
+  "AVSFee": {
+    "page": 2,
+    "x": 119.714,
+    "y": 519.889,
+    "width": 25.572000000000003,
+    "height": 13.788999999999987,
+    "type": "/Tx"
+  },
+  "BatchFee": {
+    "page": 2,
+    "x": 119.714,
+    "y": 505.823,
+    "width": 25.572000000000003,
+    "height": 13.788999999999987,
+    "type": "/Tx"
+  },
+  "ChargebackFee": {
+    "page": 2,
+    "x": 119.714,
+    "y": 491.85,
+    "width": 25.572000000000003,
+    "height": 13.788999999999987,
+    "type": "/Tx"
+  },
+  "RemediedPre-DisputeFee": {
+    "page": 2,
+    "x": 119.714,
+    "y": 477.864,
+    "width": 25.572000000000003,
+    "height": 13.789000000000044,
+    "type": "/Tx"
+  },
+  "Pre-DisputeFee": {
+    "page": 2,
+    "x": 119.714,
+    "y": 463.874,
+    "width": 25.572000000000003,
+    "height": 13.788999999999987,
+    "type": "/Tx"
+  },
+  "FraudFee": {
+    "page": 2,
+    "x": 119.714,
+    "y": 449.813,
+    "width": 25.572000000000003,
+    "height": 13.788999999999987,
+    "type": "/Tx"
+  },
+  "OtherFeeDescription1": {
+    "page": 2,
+    "x": 47.5766,
+    "y": 435.905,
+    "width": 63.383399999999995,
+    "height": 13.708000000000027,
+    "type": "/Tx"
+  },
+  "OtherFee1": {
+    "page": 2,
+    "x": 119.714,
+    "y": 435.918,
+    "width": 25.572000000000003,
+    "height": 13.788999999999987,
+    "type": "/Tx"
+  },
+  "OtherFeeDescription2": {
+    "page": 2,
+    "x": 47.5766,
+    "y": 421.887,
+    "width": 63.383399999999995,
+    "height": 13.708000000000027,
+    "type": "/Tx"
+  },
+  "OtherFee2": {
+    "page": 2,
+    "x": 119.714,
+    "y": 421.8,
+    "width": 25.572000000000003,
+    "height": 13.788999999999987,
+    "type": "/Tx"
+  },
+  "AppFee": {
+    "page": 2,
+    "x": 286.669,
+    "y": 533.901,
+    "width": 39.153999999999996,
+    "height": 13.762000000000057,
+    "type": "/Tx"
+  },
+  "AnnualFee": {
+    "page": 2,
+    "x": 286.669,
+    "y": 519.889,
+    "width": 39.153999999999996,
+    "height": 13.788999999999987,
+    "type": "/Tx"
+  },
+  "AcctMainFee": {
+    "page": 2,
+    "x": 286.669,
+    "y": 505.878,
+    "width": 39.153999999999996,
+    "height": 13.761000000000024,
+    "type": "/Tx"
+  },
+  "MonthMinFee": {
+    "page": 2,
+    "x": 286.669,
+    "y": 491.89,
+    "width": 39.153999999999996,
+    "height": 13.735000000000014,
+    "type": "/Tx"
+  },
+  "MonthlyHub": {
+    "page": 2,
+    "x": 245.741,
+    "y": 482.208,
+    "width": 4.057999999999993,
+    "height": 4.029999999999973,
+    "type": "/Btn"
+  },
+  "HubFee": {
+    "page": 2,
+    "x": 286.669,
+    "y": 477.905,
+    "width": 39.153999999999996,
+    "height": 13.762,
+    "type": "/Tx"
+  },
+  "PCIFeePeriod": {
+    "page": 2,
+    "x": 240.705,
+    "y": 468.098,
+    "width": 4.0309999999999775,
+    "height": 4.057999999999993,
+    "type": "/Btn"
+  },
+  "PCIMainFee": {
+    "page": 2,
+    "x": 286.669,
+    "y": 463.886,
+    "width": 39.153999999999996,
+    "height": 13.734999999999957,
+    "type": "/Tx"
+  },
+  "TermFee": {
+    "page": 2,
+    "x": 286.669,
+    "y": 449.786,
+    "width": 39.153999999999996,
+    "height": 13.843999999999994,
+    "type": "/Tx"
+  },
+  "OtherFeeDescription3": {
+    "page": 2,
+    "x": 168.285,
+    "y": 435.864,
+    "width": 109.393,
+    "height": 13.762,
+    "type": "/Tx"
+  },
+  "OtherFee3": {
+    "page": 2,
+    "x": 286.669,
+    "y": 435.781,
+    "width": 39.153999999999996,
+    "height": 13.843999999999994,
+    "type": "/Tx"
+  },
+  "OtherFeeDescription4": {
+    "page": 2,
+    "x": 168.285,
+    "y": 421.845,
+    "width": 109.393,
+    "height": 13.762,
+    "type": "/Tx"
+  },
+  "OtherFee4": {
+    "page": 2,
+    "x": 286.669,
+    "y": 421.745,
+    "width": 39.153999999999996,
+    "height": 13.843999999999994,
+    "type": "/Tx"
+  },
+  "CardholderSurchargePercentage": {
+    "page": 2,
+    "x": 523.431,
+    "y": 739.888,
+    "width": 54.17999999999995,
+    "height": 13.730000000000018,
+    "type": "/Tx"
+  },
+  "CardBrandFees": {
+    "page": 2,
+    "x": 335.089,
+    "y": 641.307,
+    "width": 4.031000000000006,
+    "height": 4.004000000000019,
+    "type": "/Btn"
+  },
+  "PricingNote": {
+    "page": 2,
+    "x": 330.228,
+    "y": 458.208,
+    "width": 257.564,
+    "height": 70.416,
+    "type": "/Tx"
+  },
+  "NameOnAccount": {
+    "page": 2,
+    "x": 330.233,
+    "y": 415.862,
+    "width": 107.29199999999997,
+    "height": 13.924999999999955,
+    "type": "/Tx"
+  },
+  "BankAccountType": {
+    "page": 2,
+    "x": 525.709,
+    "y": 420.666,
+    "width": 4.085000000000036,
+    "height": 4.03000000000003,
+    "type": "/Btn"
+  },
+  "BankRoutingNumber": {
+    "page": 2,
+    "x": 330.207,
+    "y": 392.211,
+    "width": 107.29200000000003,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "BankAccountNumber": {
+    "page": 2,
+    "x": 437.772,
+    "y": 392.211,
+    "width": 149.98499999999996,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "NewEquipment": {
+    "page": 2,
+    "x": 301.728,
+    "y": 363.674,
+    "width": 4.1129999999999995,
+    "height": 4.003000000000043,
+    "type": "/Btn"
+  },
+  "TerminalModel": {
+    "page": 2,
+    "x": 107.546,
+    "y": 328.837,
+    "width": 198.51600000000002,
+    "height": 14.759999999999991,
+    "type": "/Tx"
+  },
+  "GatewayModel": {
+    "page": 2,
+    "x": 389.944,
+    "y": 328.832,
+    "width": 197.90399999999994,
+    "height": 14.838999999999999,
+    "type": "/Tx"
+  },
+  "PINPadModel": {
+    "page": 2,
+    "x": 107.546,
+    "y": 313.877,
+    "width": 198.51999999999998,
+    "height": 14.759999999999991,
+    "type": "/Tx"
+  },
+  "OtherFeeDescription5": {
+    "page": 2,
+    "x": 330.34,
+    "y": 313.847,
+    "width": 59.34700000000004,
+    "height": 14.759000000000015,
+    "type": "/Tx"
+  },
+  "EquipmentOther1": {
+    "page": 2,
+    "x": 389.971,
+    "y": 313.816,
+    "width": 197.87199999999996,
+    "height": 14.787000000000035,
+    "type": "/Tx"
+  },
+  "POSSystemModel": {
+    "page": 2,
+    "x": 107.492,
+    "y": 297.224,
+    "width": 198.558,
+    "height": 16.39100000000002,
+    "type": "/Tx"
+  },
+  "OtherFeeDescription6": {
+    "page": 2,
+    "x": 330.326,
+    "y": 297.205,
+    "width": 59.45599999999996,
+    "height": 16.39100000000002,
+    "type": "/Tx"
+  },
+  "EquipmentOther2": {
+    "page": 2,
+    "x": 389.971,
+    "y": 297.245,
+    "width": 197.84500000000003,
+    "height": 16.363999999999976,
+    "type": "/Tx"
+  },
+  "AgreementTerm": {
+    "page": 2,
+    "x": 25.251,
+    "y": 254.26,
+    "width": 78.45599999999999,
+    "height": 13.706999999999994,
+    "type": "/Tx"
+  },
+  "PercentOfVolume": {
+    "page": 2,
+    "x": 130.078,
+    "y": 254.26,
+    "width": 93.298,
+    "height": 13.680000000000007,
+    "type": "/Tx"
+  },
+  "OtherAccountSetupNotes": {
+    "page": 2,
+    "x": 241.23,
+    "y": 241.255,
+    "width": 346.533,
+    "height": 37.37900000000002,
+    "type": "/Tx"
+  },
+  "AgreementSignatureOwner1Signature": {
+    "page": 2,
+    "x": 24.1935,
+    "y": 147.928,
+    "width": 113.66650000000001,
+    "height": 17.424000000000007,
+    "type": "/Tx"
+  },
+  "AgreementSignatureOwner1Name": {
+    "page": 2,
+    "x": 138.136,
+    "y": 147.928,
+    "width": 103.72800000000001,
+    "height": 17.424000000000007,
+    "type": "/Tx"
+  },
+  "AgreementSignatureOwner1Date": {
+    "page": 2,
+    "x": 242.116,
+    "y": 147.928,
+    "width": 63.760999999999996,
+    "height": 17.424000000000007,
+    "type": "/Tx"
+  },
+  "AgreementSignatureOwner2Signature": {
+    "page": 2,
+    "x": 306.102,
+    "y": 147.901,
+    "width": 113.81400000000002,
+    "height": 17.423999999999978,
+    "type": "/Tx"
+  },
+  "AgreementSignatureOwner2Name": {
+    "page": 2,
+    "x": 420.134,
+    "y": 147.901,
+    "width": 103.73699999999997,
+    "height": 17.423999999999978,
+    "type": "/Tx"
+  },
+  "AgreementSignatureOwner2Date": {
+    "page": 2,
+    "x": 524.152,
+    "y": 147.928,
+    "width": 63.652999999999906,
+    "height": 17.424000000000007,
+    "type": "/Tx"
+  },
+  "AgreementSignatureOfficerSignature": {
+    "page": 2,
+    "x": 82.5793,
+    "y": 119.202,
+    "width": 120.3157,
+    "height": 17.425999999999988,
+    "type": "/Tx"
+  },
+  "AgreementSignatureOfficerName": {
+    "page": 2,
+    "x": 203.137,
+    "y": 119.229,
+    "width": 111.536,
+    "height": 17.423999999999992,
+    "type": "/Tx"
+  },
+  "AgreementSignatureOfficerJobTitle": {
+    "page": 2,
+    "x": 314.913,
+    "y": 119.229,
+    "width": 140.757,
+    "height": 17.423999999999992,
+    "type": "/Tx"
+  },
+  "AgreementSignatureOfficerDate": {
+    "page": 2,
+    "x": 455.953,
+    "y": 119.202,
+    "width": 74.10199999999998,
+    "height": 17.47800000000001,
+    "type": "/Tx"
+  },
+  "PGSignatureOwner1Signature": {
+    "page": 2,
+    "x": 24.5829,
+    "y": 24.2162,
+    "width": 113.6121,
+    "height": 16.704099999999997,
+    "type": "/Tx"
+  },
+  "PGSignatureOwner1Name": {
+    "page": 2,
+    "x": 138.476,
+    "y": 24.2435,
+    "width": 103.702,
+    "height": 16.703999999999997,
+    "type": "/Tx"
+  },
+  "PGSignatureOwner1Date": {
+    "page": 2,
+    "x": 242.449,
+    "y": 24.2435,
+    "width": 63.742999999999995,
+    "height": 16.764300000000002,
+    "type": "/Tx"
+  },
+  "PGSignatureOwner2Signature": {
+    "page": 2,
+    "x": 306.469,
+    "y": 24.2435,
+    "width": 113.72899999999998,
+    "height": 16.703999999999997,
+    "type": "/Tx"
+  },
+  "PGSignatureOwner2Name": {
+    "page": 2,
+    "x": 420.441,
+    "y": 24.2435,
+    "width": 103.77699999999999,
+    "height": 16.703999999999997,
+    "type": "/Tx"
+  },
+  "PGSignatureOwner2Date": {
+    "page": 2,
+    "x": 524.465,
+    "y": 24.2162,
+    "width": 63.28800000000001,
+    "height": 16.704,
+    "type": "/Tx"
+  }
+}
