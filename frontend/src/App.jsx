@@ -338,7 +338,8 @@ export default function App() {
       emailFormData.append('email', targetEmail);
       emailFormData.append('pdfFile', blob, 'merchant_application.pdf');
 
-    const response = await fetch(`${REACT_APP_API_URL}/api/send-email`, {
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+    const response = await fetch(`${apiUrl}/api/send-email`, {
         method: 'POST',
         body: emailFormData,
       });
