@@ -53,10 +53,16 @@ app.get('/', (req, res) => {
   res.json({ message: 'Merchant App Backend is running!', status: 'ok' });
 });
 
-app.post('/api/send-email', upload.single('pdfFile'), async (req, res) => {
+// Email sending endpoint (both with and without trailing slash)
+app.post('/api/send-email/', upload.single('pdfFile'), handleSendEmail);
+app.post('/api/send-email', upload.single('pdfFile'), handleSendEmail);
+
+async function handleSendEmail(req, res) {
   try {
     const { email } = req.body;
     const file = req.file;
+
+    console.log('Email send request received:', { email, hasFile: !!file });
 
     if (!email || !file) {
       return res.status(400).json({ error: 'Missing email or PDF file.' });
@@ -94,9 +100,9 @@ app.post('/api/send-email', upload.single('pdfFile'), async (req, res) => {
     res.json({ success: true, message: 'Email sent successfully', previewUrl });
   } catch (error) {
     console.error('Error sending email:', error);
-    res.status(500).json({ error: 'Failed to send email' });
+    res.status(500).json({ error: error.message || 'Failed to send email' });
   }
-});
+}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
