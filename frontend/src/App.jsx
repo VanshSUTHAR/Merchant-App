@@ -20,7 +20,7 @@ const TABS = [
   { id: 'equipment-services', name: 'Equipment & Sign', step: 8 }
 ];
 
-const API_URL = "http://localhost:5000/"; // Adjust if your backend runs on a different port
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/"; // Adjust if your backend runs on a different port
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('merchant-info');
