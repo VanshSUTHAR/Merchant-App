@@ -20,7 +20,7 @@ const TABS = [
   { id: 'equipment-services', name: 'Equipment & Sign', step: 8 }
 ];
 
-const API_URL = process.env.REACT_APP_API_URL || 'https:localhost:5000'; 
+const API_URL = "http://localhost:5000/"; // Adjust if your backend runs on a different port
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('merchant-info');
@@ -388,7 +388,7 @@ export default function App() {
       emailFormData.append('email', targetEmail);
       emailFormData.append('pdfFile', blob, 'merchant_application.pdf');
 
-      const response = await fetch(`${API_URL}send-email/`, {
+      const response = await fetch(`${API_URL}api/send-email/`, {
         method: 'POST',
         body: emailFormData,
       });

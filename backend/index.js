@@ -97,3 +97,11 @@ app.post('/api/send-email', upload.single('pdfFile'), handleSendEmail);
 // ✅ CRITICAL FOR VERCEL: Export the app instead of calling app.listen()
 // Vercel runs this as a serverless function — app.listen() will cause it to fail
 module.exports = app;
+
+// For local development: start the server if this file is run directly
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+  });
+}
