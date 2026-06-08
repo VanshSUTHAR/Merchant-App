@@ -166,155 +166,172 @@ export default function App() {
     }
   };
 
-  const validateForm = () => {
+  const getErrorsForTab = (tabId) => {
     const errors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^\d{3}-\d{3}-\d{4}$|^\+?\d{10,12}$|^\d{10}$/;
 
-    // Tab 1: Merchant Information
-    if (!formData.LegalBusinessName) errors.LegalBusinessName = 'Legal Business Name is required';
-    if (!formData.DBA) errors.DBA = 'DBA name is required';
-    if (!formData.BusinessTaxID) errors.BusinessTaxID = 'Tax ID (EIN/SSN) is required';
-    if (!formData.TimeInBusiness) errors.TimeInBusiness = 'Time in business is required';
-    if (!formData.LegalStreetAddress) errors.LegalStreetAddress = 'Street address is required';
-    if (!formData.LegalCity) errors.LegalCity = 'City is required';
-    if (!formData.LegalState) errors.LegalState = 'State is required';
-    if (!formData.LegalZIP) errors.LegalZIP = 'ZIP code is required';
+    switch(tabId) {
+      case 'merchant-info':
+        if (!formData.LegalBusinessName) errors.LegalBusinessName = 'Legal Business Name is required';
+        if (!formData.DBA) errors.DBA = 'DBA name is required';
+        if (!formData.BusinessTaxID) errors.BusinessTaxID = 'Tax ID (EIN/SSN) is required';
+        if (!formData.TimeInBusiness) errors.TimeInBusiness = 'Time in business is required';
+        if (!formData.LegalStreetAddress) errors.LegalStreetAddress = 'Street address is required';
+        if (!formData.LegalCity) errors.LegalCity = 'City is required';
+        if (!formData.LegalState) errors.LegalState = 'State is required';
+        if (!formData.LegalZIP) errors.LegalZIP = 'ZIP code is required';
 
-    if (!formData.PhysicalSame) {
-      if (!formData.PhysicalStreetAddress) errors.PhysicalStreetAddress = 'Physical address is required';
-      if (!formData.PhysicalCity) errors.PhysicalCity = 'Physical city is required';
-      if (!formData.PhysicalState) errors.PhysicalState = 'Physical state is required';
-      if (!formData.PhysicalZIP) errors.PhysicalZIP = 'Physical ZIP is required';
-    }
-
-    if (!formData.MailingSameAsLegal) {
-      if (!formData.BillingStreetAddress) errors.BillingStreetAddress = 'Billing address is required';
-      if (!formData.BillingCity) errors.BillingCity = 'Billing city is required';
-      if (!formData.BillingState) errors.BillingState = 'Billing state is required';
-      if (!formData.BillingZIP) errors.BillingZIP = 'Billing ZIP is required';
-    }
-
-    // Tab 2: Contact Information
-    if (!formData.ContactFirstName) errors.ContactFirstName = 'First name is required';
-    if (!formData.ContactLastName) errors.ContactLastName = 'Last name is required';
-
-    if (!formData.ContactPhoneNumber) {
-      errors.ContactPhoneNumber = 'Phone number is required';
-    } else if (!phoneRegex.test(formData.ContactPhoneNumber.replace(/[\s()-]/g, ''))) {
-      errors.ContactPhoneNumber = 'Invalid phone number format';
-    }
-
-    if (!formData.ContactEmailAddress) {
-      errors.ContactEmailAddress = 'Email is required';
-    } else if (!emailRegex.test(formData.ContactEmailAddress)) {
-      errors.ContactEmailAddress = 'Invalid email address';
-    }
-
-    if (!formData.WebsiteURL) errors.WebsiteURL = 'Website URL is required';
-
-    if (!formData.CustomerServicePhoneNumber) {
-      errors.CustomerServicePhoneNumber = 'Customer service phone is required';
-    } else if (!phoneRegex.test(formData.CustomerServicePhoneNumber.replace(/[\s()-]/g, ''))) {
-      errors.CustomerServicePhoneNumber = 'Invalid phone number format';
-    }
-
-    if (!formData.CustomerServiceEmailAddress) {
-      errors.CustomerServiceEmailAddress = 'Customer service email is required';
-    } else if (!emailRegex.test(formData.CustomerServiceEmailAddress)) {
-      errors.CustomerServiceEmailAddress = 'Invalid email address';
-    }
-
-    // Tab 3: Owner Information
-    if (!formData.NoOwner) {
-      if (!formData.Owner1FirstName) errors.Owner1FirstName = 'Owner first name is required';
-      if (!formData.Owner1LastName) errors.Owner1LastName = 'Owner last name is required';
-      if (!formData.DateofBirth) errors.DateofBirth = 'Date of birth is required';
-
-      if (!formData.SocialSecurity) {
-        errors.SocialSecurity = 'SSN is required';
-      } else {
-        const ssnDigits = formData.SocialSecurity.replace(/\D/g, '');
-        if (ssnDigits.length !== 9) errors.SocialSecurity = 'SSN must be 9 digits';
-      }
-
-      if (!formData.Owner1Percent) {
-        errors.Owner1Percent = 'Ownership percentage is required';
-      } else {
-        const pct1 = parseFloat(formData.Owner1Percent) || 0;
-        const pct2 = parseFloat(formData.Owner2Percent) || 0;
-        if (pct1 + pct2 > 100) {
-          errors.Owner1Percent = 'Total ownership percentages cannot exceed 100%';
+        if (!formData.PhysicalSame) {
+          if (!formData.PhysicalStreetAddress) errors.PhysicalStreetAddress = 'Physical address is required';
+          if (!formData.PhysicalCity) errors.PhysicalCity = 'Physical city is required';
+          if (!formData.PhysicalState) errors.PhysicalState = 'Physical state is required';
+          if (!formData.PhysicalZIP) errors.PhysicalZIP = 'Physical ZIP is required';
         }
-      }
 
-      if (!formData.Owner1HomeStreetAddress) errors.Owner1HomeStreetAddress = 'Home street address is required';
-      if (!formData.Owner1HomeCity) errors.Owner1HomeCity = 'Home city is required';
-      if (!formData.Owner1HomeState) errors.Owner1HomeState = 'Home state is required';
-      if (!formData.Owner1HomeZIP) errors.Owner1HomeZIP = 'Home ZIP code is required';
+        if (!formData.MailingSameAsLegal) {
+          if (!formData.BillingStreetAddress) errors.BillingStreetAddress = 'Billing address is required';
+          if (!formData.BillingCity) errors.BillingCity = 'Billing city is required';
+          if (!formData.BillingState) errors.BillingState = 'Billing state is required';
+          if (!formData.BillingZIP) errors.BillingZIP = 'Billing ZIP is required';
+        }
+        break;
+
+      case 'contact-info':
+        if (!formData.ContactFirstName) errors.ContactFirstName = 'First name is required';
+        if (!formData.ContactLastName) errors.ContactLastName = 'Last name is required';
+
+        if (!formData.ContactPhoneNumber) {
+          errors.ContactPhoneNumber = 'Phone number is required';
+        } else if (!phoneRegex.test(formData.ContactPhoneNumber.replace(/[\s()-]/g, ''))) {
+          errors.ContactPhoneNumber = 'Invalid phone number format';
+        }
+
+        if (!formData.ContactEmailAddress) {
+          errors.ContactEmailAddress = 'Email is required';
+        } else if (!emailRegex.test(formData.ContactEmailAddress)) {
+          errors.ContactEmailAddress = 'Invalid email address';
+        }
+
+        if (!formData.WebsiteURL) errors.WebsiteURL = 'Website URL is required';
+
+        if (!formData.CustomerServicePhoneNumber) {
+          errors.CustomerServicePhoneNumber = 'Customer service phone is required';
+        } else if (!phoneRegex.test(formData.CustomerServicePhoneNumber.replace(/[\s()-]/g, ''))) {
+          errors.CustomerServicePhoneNumber = 'Invalid phone number format';
+        }
+
+        if (!formData.CustomerServiceEmailAddress) {
+          errors.CustomerServiceEmailAddress = 'Customer service email is required';
+        } else if (!emailRegex.test(formData.CustomerServiceEmailAddress)) {
+          errors.CustomerServiceEmailAddress = 'Invalid email address';
+        }
+        break;
+
+      case 'owner-info':
+        if (!formData.NoOwner) {
+          if (!formData.Owner1FirstName) errors.Owner1FirstName = 'Owner first name is required';
+          if (!formData.Owner1LastName) errors.Owner1LastName = 'Owner last name is required';
+          if (!formData.DateofBirth) errors.DateofBirth = 'Date of birth is required';
+
+          if (!formData.SocialSecurity) {
+            errors.SocialSecurity = 'SSN is required';
+          } else {
+            const ssnDigits = formData.SocialSecurity.replace(/\D/g, '');
+            if (ssnDigits.length !== 9) errors.SocialSecurity = 'SSN must be 9 digits';
+          }
+
+          if (!formData.Owner1Percent) {
+            errors.Owner1Percent = 'Ownership percentage is required';
+          } else {
+            const pct1 = parseFloat(formData.Owner1Percent) || 0;
+            const pct2 = parseFloat(formData.Owner2Percent) || 0;
+            if (pct1 + pct2 > 100) {
+              errors.Owner1Percent = 'Total ownership percentages cannot exceed 100%';
+            }
+          }
+
+          if (!formData.Owner1HomeStreetAddress) errors.Owner1HomeStreetAddress = 'Home street address is required';
+          if (!formData.Owner1HomeCity) errors.Owner1HomeCity = 'Home city is required';
+          if (!formData.Owner1HomeState) errors.Owner1HomeState = 'Home state is required';
+          if (!formData.Owner1HomeZIP) errors.Owner1HomeZIP = 'Home ZIP code is required';
+        }
+        break;
+
+      case 'officer-info':
+        if (!formData.SameAsOwner) {
+          if (!formData.OfficerFirstName) errors.OfficerFirstName = 'Officer first name is required';
+          if (!formData.OfficerLastName) errors.OfficerLastName = 'Officer last name is required';
+          if (!formData.DateofBirthOfficer) errors.DateofBirthOfficer = 'Date of birth is required';
+
+          if (!formData.SocialSecurityOfficer) {
+            errors.SocialSecurityOfficer = 'SSN is required';
+          } else {
+            const ssnDigits = formData.SocialSecurityOfficer.replace(/\D/g, '');
+            if (ssnDigits.length !== 9) errors.SocialSecurityOfficer = 'SSN must be 9 digits';
+          }
+
+          if (!formData.OfficerHomeStreetAddress) errors.OfficerHomeStreetAddress = 'Home address is required';
+          if (!formData.OfficerHomeCity) errors.OfficerHomeCity = 'City is required';
+          if (!formData.OfficerHomeState) errors.OfficerHomeState = 'State is required';
+          if (!formData.OfficerHomeZIP) errors.OfficerHomeZIP = 'ZIP code is required';
+        }
+        break;
+
+      case 'processing-info':
+        if (!formData.VisaMCMonthlyVolume) errors.VisaMCMonthlyVolume = 'Monthly volume is required';
+        if (!formData.HighestTransactionAmount) errors.HighestTransactionAmount = 'Highest ticket is required';
+        if (!formData.AverageTransactionAmount) errors.AverageTransactionAmount = 'Average ticket is required';
+
+        const salesTotal = (
+          (parseFloat(formData.SalesProfileRetailPercentage) || 0) +
+          (parseFloat(formData.SalesProfileInternetPercentage) || 0) +
+          (parseFloat(formData.SalesProfileMOTOPercentage) || 0) +
+          (parseFloat(formData.SalesProfileOtherPercentage) || 0) +
+          (parseFloat(formData.SalesProfileStoredPercentage) || 0)
+        );
+        if (salesTotal !== 100) {
+          errors.SalesProfileTotal = `Sales Profile Channels must equal exactly 100% (currently ${salesTotal}%)`;
+        }
+
+        const customerTotal = (
+          (parseFloat(formData.CustomerProfileIndividualConsumers) || 0) +
+          (parseFloat(formData.CustomerProfileBusinesses) || 0) +
+          (parseFloat(formData.CustomerProfileGovernment) || 0)
+        );
+        if (customerTotal !== 100) {
+          errors.CustomerProfileTotal = `Customer Profile must equal exactly 100% (currently ${customerTotal}%)`;
+        }
+
+        if (formData['AcceptEBT?'] && !formData.EBTFSNNumber) {
+          errors.EBTFSNNumber = 'FSN number is required when accepting EBT';
+        }
+        break;
+
+      case 'product-info':
+        if (!formData.ProductDescription) errors.ProductDescription = 'Product description is required';
+        if (!formData.RefundPolicyDescription) errors.RefundPolicyDescription = 'Refund policy is required';
+        if (!formData.AgentID) errors.AgentID = 'Agent ID is required';
+        if (formData['Warranty?'] && !formData.WarrantyDuration) {
+          errors.WarrantyDuration = 'Warranty duration is required';
+        }
+        break;
+        
+      case 'billing-info':
+      case 'equipment-services':
+        // Tab 7 and 8 have no validation as they're filled by customer on page 2
+        break;
     }
+    return errors;
+  };
 
-    // Tab 4: Officer Information
-    if (!formData.SameAsOwner) {
-      if (!formData.OfficerFirstName) errors.OfficerFirstName = 'Officer first name is required';
-      if (!formData.OfficerLastName) errors.OfficerLastName = 'Officer last name is required';
-      if (!formData.DateofBirthOfficer) errors.DateofBirthOfficer = 'Date of birth is required';
-
-      if (!formData.SocialSecurityOfficer) {
-        errors.SocialSecurityOfficer = 'SSN is required';
-      } else {
-        const ssnDigits = formData.SocialSecurityOfficer.replace(/\D/g, '');
-        if (ssnDigits.length !== 9) errors.SocialSecurityOfficer = 'SSN must be 9 digits';
-      }
-
-      if (!formData.OfficerHomeStreetAddress) errors.OfficerHomeStreetAddress = 'Home address is required';
-      if (!formData.OfficerHomeCity) errors.OfficerHomeCity = 'City is required';
-      if (!formData.OfficerHomeState) errors.OfficerHomeState = 'State is required';
-      if (!formData.OfficerHomeZIP) errors.OfficerHomeZIP = 'ZIP code is required';
-    }
-
-    // Tab 5: Processing Information
-    if (!formData.VisaMCMonthlyVolume) errors.VisaMCMonthlyVolume = 'Monthly volume is required';
-    if (!formData.HighestTransactionAmount) errors.HighestTransactionAmount = 'Highest ticket is required';
-    if (!formData.AverageTransactionAmount) errors.AverageTransactionAmount = 'Average ticket is required';
-
-    const salesTotal = (
-      (parseFloat(formData.SalesProfileRetailPercentage) || 0) +
-      (parseFloat(formData.SalesProfileInternetPercentage) || 0) +
-      (parseFloat(formData.SalesProfileMOTOPercentage) || 0) +
-      (parseFloat(formData.SalesProfileOtherPercentage) || 0) +
-      (parseFloat(formData.SalesProfileStoredPercentage) || 0)
-    );
-    if (salesTotal !== 100) {
-      errors.SalesProfileTotal = `Sales Profile Channels must equal exactly 100% (currently ${salesTotal}%)`;
-    }
-
-    const customerTotal = (
-      (parseFloat(formData.CustomerProfileIndividualConsumers) || 0) +
-      (parseFloat(formData.CustomerProfileBusinesses) || 0) +
-      (parseFloat(formData.CustomerProfileGovernment) || 0)
-    );
-    if (customerTotal !== 100) {
-      errors.CustomerProfileTotal = `Customer Profile must equal exactly 100% (currently ${customerTotal}%)`;
-    }
-
-    if (formData['AcceptEBT?'] && !formData.EBTFSNNumber) {
-      errors.EBTFSNNumber = 'FSN number is required when accepting EBT';
-    }
-
-    // Tab 6: Product Information
-    if (!formData.ProductDescription) errors.ProductDescription = 'Product description is required';
-    if (!formData.RefundPolicyDescription) errors.RefundPolicyDescription = 'Refund policy is required';
-    if (!formData.AgentID) errors.AgentID = 'Agent ID is required';
-    if (formData['Warranty?'] && !formData.WarrantyDuration) {
-      errors.WarrantyDuration = 'Warranty duration is required';
-    }
-
-    // Tab 7: Billing Information (Removed validation as it's filled by customer on page 2)
-    // Tab 8: Equipment & Signatures (Removed validation as it's filled by customer on page 2)
-
-    setValidationErrors(errors);
-    return Object.keys(errors).length === 0;
+  const validateForm = () => {
+    let allErrors = {};
+    TABS.forEach(tab => {
+      allErrors = { ...allErrors, ...getErrorsForTab(tab.id) };
+    });
+    setValidationErrors(allErrors);
+    return Object.keys(allErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
@@ -496,16 +513,16 @@ export default function App() {
           {TABS.map((tab, index) => {
             const hasError = Object.keys(validationErrors).some(field => getTabOfField(field) === tab.id);
             const isActive = activeTab === tab.id;
-            const isPast = currentTabIdx > index;
+            const isCompleted = Object.keys(getErrorsForTab(tab.id)).length === 0;
 
             return (
               <div
                 key={tab.id}
-                className={`stepper-item ${isActive ? 'active' : ''} ${isPast ? 'completed' : ''} ${hasError ? 'has-error' : ''}`}
+                className={`stepper-item ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''} ${hasError ? 'has-error' : ''}`}
                 onClick={() => setActiveTab(tab.id)}
               >
                 <div className="step-counter">
-                  {isPast && !hasError ? '✓' : tab.step}
+                  {isCompleted && !hasError ? '✓' : tab.step}
                 </div>
                 <div className="step-name">
                   {tab.name}
