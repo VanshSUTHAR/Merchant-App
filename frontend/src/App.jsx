@@ -8,6 +8,7 @@ import ProductInformation from './components/ProductInformation';
 import BillingInformation from './components/BillingInformation';
 import EquipmentServices from './components/EquipmentServices';
 import { generatePDF } from './services/pdfGenerator';
+require('dotenv').config(); 
 
 const TABS = [
   { id: 'merchant-info', name: 'Merchant Info', step: 1 },
