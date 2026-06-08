@@ -7,7 +7,7 @@ const AdmZip = require('adm-zip');
 
 const app = express();
 
-// Enable CORS for all origins (safe for this use case)
+// Enable CORS for all origins
 app.use(cors({
   origin: '*',
   methods: ['GET', 'POST', 'OPTIONS'],
@@ -25,8 +25,8 @@ const createTransporter = async () => {
   if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
     return nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT || 587,
-      secure: process.env.SMTP_PORT == 465,
+      port: parseInt(process.env.SMTP_PORT) || 587,
+      secure: parseInt(process.env.SMTP_PORT) === 465,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -36,14 +36,14 @@ const createTransporter = async () => {
 
   // Fallback for testing: Ethereal Email (fake SMTP service)
   console.log('No SMTP credentials found in .env, generating Ethereal test account...');
-  let testAccount = await nodemailer.createTestAccount();
+  const testAccount = await nodemailer.createTestAccount();
   return nodemailer.createTransport({
-    host: "smtp.ethereal.email",
+    host: 'smtp.ethereal.email',
     port: 587,
-    secure: false, // true for 465, false for other ports
+    secure: false,
     auth: {
-      user: testAccount.user, // generated ethereal user
-      pass: testAccount.pass, // generated ethereal password
+      user: testAccount.user,
+      pass: testAccount.pass,
     },
   });
 };
@@ -53,10 +53,7 @@ app.get('/', (req, res) => {
   res.json({ message: 'Merchant App Backend is running!', status: 'ok' });
 });
 
-// Email sending endpoint (both with and without trailing slash)
-app.post('/api/send-email/', upload.single('pdfFile'), handleSendEmail);
-app.post('/api/send-email', upload.single('pdfFile'), handleSendEmail);
-
+// Email sending handler function
 async function handleSendEmail(req, res) {
   try {
     const { email } = req.body;
@@ -76,25 +73,24 @@ async function handleSendEmail(req, res) {
     const transporter = await createTransporter();
 
     const info = await transporter.sendMail({
-      from: '"Merchant App" <no-reply@merchantapp.local>', // sender address
-      to: email, // list of receivers
-      subject: "Your Completed Merchant Application (Zipped)", // Subject line
-      text: "Please find attached your completed merchant application inside the ZIP file. Extract it to view or edit the PDF.", // plain text body
-      html: "<p>Please find attached your completed <b>Merchant Application</b> inside the ZIP file.</p><p>Extract it to view or edit the PDF for your records.</p>", // html body
+      from: '"Merchant App" <no-reply@merchantapp.local>',
+      to: email,
+      subject: 'Your Completed Merchant Application (Zipped)',
+      text: 'Please find attached your completed merchant application inside the ZIP file. Extract it to view or edit the PDF.',
+      html: '<p>Please find attached your completed <b>Merchant Application</b> inside the ZIP file.</p><p>Extract it to view or edit the PDF for your records.</p>',
       attachments: [
         {
           filename: 'merchant_application.zip',
           content: zipBuffer,
-        }
-      ]
+        },
+      ],
     });
 
-    console.log("Message sent: %s", info.messageId);
+    console.log('Message sent: %s', info.messageId);
 
-    // Provide a preview URL if using Ethereal email
     const previewUrl = nodemailer.getTestMessageUrl(info);
     if (previewUrl) {
-      console.log("Preview URL: %s", previewUrl);
+      console.log('Preview URL: %s', previewUrl);
     }
 
     res.json({ success: true, message: 'Email sent successfully', previewUrl });
@@ -104,7 +100,10 @@ async function handleSendEmail(req, res) {
   }
 }
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Backend server running on port ${PORT}`);
-});
+// Register both with and without trailing slash to avoid 308 redirects
+app.post('/api/send-email/', upload.single('pdfFile'), handleSendEmail);
+app.post('/api/send-email', upload.single('pdfFile'), handleSendEmail);
+
+// ✅ CRITICAL FOR VERCEL: Export the app instead of calling app.listen()
+// Vercel runs this as a serverless function — app.listen() will cause it to fail
+module.exports = app;

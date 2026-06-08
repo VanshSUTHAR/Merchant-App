@@ -20,11 +20,13 @@ const TABS = [
   { id: 'equipment-services', name: 'Equipment & Sign', step: 8 }
 ];
 
+// ✅ FIX 1: Use environment variable for API URL with fallback
+const API_URL = process.env.REACT_APP_API_URL || 'https://merchant-backend-five.vercel.app';
+
 export default function App() {
   const [activeTab, setActiveTab] = useState('merchant-info');
   const [emailRecipient, setEmailRecipient] = useState('');
   const [formData, setFormData] = useState({
-    // Prefill some fields to help the user/developer see defaults
     AgreementTerm: '36 Months',
     AgreementSignatureOwner1Date: new Date().toLocaleDateString('en-US'),
     AgreementSignatureOfficerDate: new Date().toLocaleDateString('en-US'),
@@ -37,7 +39,7 @@ export default function App() {
     CustomerProfileIndividualConsumers: '100',
     CustomerProfileBusinesses: '0',
     CustomerProfileGovernment: '0',
-    BankAccountType: true, // Default checked (Checking)
+    BankAccountType: true,
     PhysicalSame: true,
     MailingSameAsLegal: true,
     SameAsOwner: true
@@ -45,9 +47,8 @@ export default function App() {
 
   const [validationErrors, setValidationErrors] = useState({});
   const [isGenerating, setIsGenerating] = useState(false);
-  const [alert, setAlert] = useState(null); // { type: 'success' | 'danger', message: '' }
+  const [alert, setAlert] = useState(null);
 
-  // Show a temp auto-dismiss toast alert
   const triggerAlert = (type, message) => {
     setAlert({ type, message });
     setTimeout(() => {
@@ -55,7 +56,6 @@ export default function App() {
     }, 6000);
   };
 
-  // Helper to copy Legal Address details to Physical or Billing
   const copyAddress = (source, target) => {
     setFormData(prev => {
       const updated = { ...prev };
@@ -74,7 +74,6 @@ export default function App() {
     });
   };
 
-  // Helper to copy Owner 1 details to Officer details
   const copyOwnerToOfficer = () => {
     setFormData(prev => ({
       ...prev,
@@ -149,17 +148,15 @@ export default function App() {
     setValidationErrors({});
   };
 
-  // Handles text change & checkboxes toggle
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     const finalValue = type === 'checkbox' ? checked : value;
-    
+
     setFormData(prev => ({
       ...prev,
       [name]: finalValue
     }));
 
-    // Clear validation error dynamically
     if (validationErrors[name]) {
       setValidationErrors(prev => {
         const copy = { ...prev };
@@ -169,18 +166,16 @@ export default function App() {
     }
   };
 
-  // Central Form Validations
   const validateForm = () => {
     const errors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^\d{3}-\d{3}-\d{4}$|^\+?\d{10,12}$|^\d{10}$/;
 
-    // --- Tab 1: Merchant Information ---
+    // Tab 1: Merchant Information
     if (!formData.LegalBusinessName) errors.LegalBusinessName = 'Legal Business Name is required';
     if (!formData.DBA) errors.DBA = 'DBA name is required';
     if (!formData.BusinessTaxID) errors.BusinessTaxID = 'Tax ID (EIN/SSN) is required';
     if (!formData.TimeInBusiness) errors.TimeInBusiness = 'Time in business is required';
-
     if (!formData.LegalStreetAddress) errors.LegalStreetAddress = 'Street address is required';
     if (!formData.LegalCity) errors.LegalCity = 'City is required';
     if (!formData.LegalState) errors.LegalState = 'State is required';
@@ -200,10 +195,10 @@ export default function App() {
       if (!formData.BillingZIP) errors.BillingZIP = 'Billing ZIP is required';
     }
 
-    // --- Tab 2: Contact Information ---
+    // Tab 2: Contact Information
     if (!formData.ContactFirstName) errors.ContactFirstName = 'First name is required';
     if (!formData.ContactLastName) errors.ContactLastName = 'Last name is required';
-    
+
     if (!formData.ContactPhoneNumber) {
       errors.ContactPhoneNumber = 'Phone number is required';
     } else if (!phoneRegex.test(formData.ContactPhoneNumber.replace(/[\s()-]/g, ''))) {
@@ -217,7 +212,7 @@ export default function App() {
     }
 
     if (!formData.WebsiteURL) errors.WebsiteURL = 'Website URL is required';
-    
+
     if (!formData.CustomerServicePhoneNumber) {
       errors.CustomerServicePhoneNumber = 'Customer service phone is required';
     } else if (!phoneRegex.test(formData.CustomerServicePhoneNumber.replace(/[\s()-]/g, ''))) {
@@ -230,12 +225,12 @@ export default function App() {
       errors.CustomerServiceEmailAddress = 'Invalid email address';
     }
 
-    // --- Tab 3: Owner Information ---
+    // Tab 3: Owner Information
     if (!formData.NoOwner) {
       if (!formData.Owner1FirstName) errors.Owner1FirstName = 'Owner first name is required';
       if (!formData.Owner1LastName) errors.Owner1LastName = 'Owner last name is required';
       if (!formData.DateofBirth) errors.DateofBirth = 'Date of birth is required';
-      
+
       if (!formData.SocialSecurity) {
         errors.SocialSecurity = 'SSN is required';
       } else {
@@ -259,12 +254,12 @@ export default function App() {
       if (!formData.Owner1HomeZIP) errors.Owner1HomeZIP = 'Home ZIP code is required';
     }
 
-    // --- Tab 4: Officer Information ---
+    // Tab 4: Officer Information
     if (!formData.SameAsOwner) {
       if (!formData.OfficerFirstName) errors.OfficerFirstName = 'Officer first name is required';
       if (!formData.OfficerLastName) errors.OfficerLastName = 'Officer last name is required';
       if (!formData.DateofBirthOfficer) errors.DateofBirthOfficer = 'Date of birth is required';
-      
+
       if (!formData.SocialSecurityOfficer) {
         errors.SocialSecurityOfficer = 'SSN is required';
       } else {
@@ -278,12 +273,11 @@ export default function App() {
       if (!formData.OfficerHomeZIP) errors.OfficerHomeZIP = 'ZIP code is required';
     }
 
-    // --- Tab 5: Processing Information ---
+    // Tab 5: Processing Information
     if (!formData.VisaMCMonthlyVolume) errors.VisaMCMonthlyVolume = 'Monthly volume is required';
     if (!formData.HighestTransactionAmount) errors.HighestTransactionAmount = 'Highest ticket is required';
     if (!formData.AverageTransactionAmount) errors.AverageTransactionAmount = 'Average ticket is required';
 
-    // Sales channel sum validation
     const salesTotal = (
       (parseFloat(formData.SalesProfileRetailPercentage) || 0) +
       (parseFloat(formData.SalesProfileInternetPercentage) || 0) +
@@ -295,7 +289,6 @@ export default function App() {
       errors.SalesProfileTotal = `Sales Profile Channels must equal exactly 100% (currently ${salesTotal}%)`;
     }
 
-    // Customer profile sum validation
     const customerTotal = (
       (parseFloat(formData.CustomerProfileIndividualConsumers) || 0) +
       (parseFloat(formData.CustomerProfileBusinesses) || 0) +
@@ -309,7 +302,7 @@ export default function App() {
       errors.EBTFSNNumber = 'FSN number is required when accepting EBT';
     }
 
-    // --- Tab 6: Product Information ---
+    // Tab 6: Product Information
     if (!formData.ProductDescription) errors.ProductDescription = 'Product description is required';
     if (!formData.RefundPolicyDescription) errors.RefundPolicyDescription = 'Refund policy is required';
     if (!formData.AgentID) errors.AgentID = 'Agent ID is required';
@@ -317,9 +310,9 @@ export default function App() {
       errors.WarrantyDuration = 'Warranty duration is required';
     }
 
-    // --- Tab 7: Billing Information ---
+    // Tab 7: Billing Information
     if (!formData.NameOnAccount) errors.NameOnAccount = 'Bank account name is required';
-    
+
     if (!formData.BankRoutingNumber) {
       errors.BankRoutingNumber = 'Routing number is required';
     } else {
@@ -329,12 +322,11 @@ export default function App() {
 
     if (!formData.BankAccountNumber) errors.BankAccountNumber = 'Account number is required';
 
-    // --- Tab 8: Equipment & Signatures ---
+    // Tab 8: Equipment & Signatures
     if (!formData.AgreementTerm) errors.AgreementTerm = 'Agreement term is required';
     if (!formData.AgreementSignatureOwner1Signature) errors.AgreementSignatureOwner1Signature = 'Owner 1 signature name is required';
     if (!formData.AgreementSignatureOwner1Name) errors.AgreementSignatureOwner1Name = 'Owner 1 printed name is required';
     if (!formData.AgreementSignatureOwner1Date) errors.AgreementSignatureOwner1Date = 'Date is required';
-
     if (!formData.AgreementSignatureOfficerSignature) errors.AgreementSignatureOfficerSignature = 'Officer signature name is required';
     if (!formData.AgreementSignatureOfficerName) errors.AgreementSignatureOfficerName = 'Officer printed name is required';
     if (!formData.AgreementSignatureOfficerJobTitle) errors.AgreementSignatureOfficerJobTitle = 'Job title is required';
@@ -344,7 +336,6 @@ export default function App() {
     return Object.keys(errors).length === 0;
   };
 
-  // Prevent default form submit
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -358,7 +349,7 @@ export default function App() {
     setIsGenerating(true);
     try {
       const blob = await generatePDF(formData);
-      
+
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
@@ -393,22 +384,22 @@ export default function App() {
     setIsGenerating(true);
     try {
       const blob = await generatePDF(formData);
-      
+
       const emailFormData = new FormData();
       emailFormData.append('email', targetEmail);
       emailFormData.append('pdfFile', blob, 'merchant_application.pdf');
 
-    const apiUrl = 'https://merchant-backend-five.vercel.app';
-    const response = await fetch(`${apiUrl}/api/send-email`, {
+      // ✅ FIX 2: Use the API_URL constant defined at the top of the file
+      // ✅ FIX 3: Trailing slash added to avoid 308 redirect that breaks CORS
+      const response = await fetch(`${API_URL}/api/send-email/`, {
         method: 'POST',
         body: emailFormData,
       });
 
-
       const data = await response.json();
       if (response.ok) {
         if (data.previewUrl) {
-          triggerAlert('success', `Email sent! Test Preview URL available in browser console.`);
+          triggerAlert('success', 'Email sent! Test Preview URL available in browser console.');
           console.log('Ethereal Email Preview URL:', data.previewUrl);
         } else {
           triggerAlert('success', 'Merchant Application PDF sent successfully to the customer!');
@@ -424,7 +415,6 @@ export default function App() {
     }
   };
 
-  // Helper to get which tab a validation error belongs to so we can navigate the user
   const getTabOfField = (field) => {
     const merchantFields = [
       'LegalBusinessName', 'DBA', 'BusinessTaxID', 'TimeInBusiness',
@@ -465,7 +455,6 @@ export default function App() {
     return 'equipment-services';
   };
 
-  // Calculate overall form progress percentage
   const getFormProgress = () => {
     const fieldsToTrack = [
       formData.LegalBusinessName, formData.DBA, formData.BusinessTaxID,
@@ -514,9 +503,9 @@ export default function App() {
             Complete the web form dashboard below to seamlessly overlay details onto your 10-page merchant processing agreement.
           </p>
         </div>
-        <button 
-          type="button" 
-          className="btn btn-secondary" 
+        <button
+          type="button"
+          className="btn btn-secondary"
           onClick={handleFillDummyData}
           style={{ whiteSpace: 'nowrap' }}
         >
@@ -533,8 +522,8 @@ export default function App() {
             const isPast = currentTabIdx > index;
 
             return (
-              <div 
-                key={tab.id} 
+              <div
+                key={tab.id}
                 className={`stepper-item ${isActive ? 'active' : ''} ${isPast ? 'completed' : ''} ${hasError ? 'has-error' : ''}`}
                 onClick={() => setActiveTab(tab.id)}
               >
@@ -654,11 +643,11 @@ export default function App() {
                       Download PDF 🗎
                     </button>
                     <div className="email-send-group">
-                      <input 
-                        type="text" 
-                        placeholder="Customer Emails (comma-separated)" 
-                        className="form-input email-input" 
-                        value={emailRecipient} 
+                      <input
+                        type="text"
+                        placeholder="Customer Emails (comma-separated)"
+                        className="form-input email-input"
+                        value={emailRecipient}
                         onChange={(e) => setEmailRecipient(e.target.value)}
                       />
                       <button
@@ -731,7 +720,7 @@ export default function App() {
               </p>
             )}
           </div>
-          
+
           {/* Template Info Card */}
           <div className="sidebar-card" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
             <div style={{ fontWeight: 'bold', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>Template details</div>
