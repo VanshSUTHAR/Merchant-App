@@ -89,6 +89,66 @@ export default function App() {
     }));
   };
 
+  const handleFillDummyData = () => {
+    setFormData(prev => ({
+      ...prev,
+      LegalBusinessName: 'Acme Corp LLC',
+      DBA: 'Acme Widgets',
+      BusinessTaxID: '12-3456789',
+      TimeInBusiness: '5 Years',
+      LegalStreetAddress: '123 Acme Way',
+      LegalCity: 'Metropolis',
+      LegalState: 'NY',
+      LegalZIP: '10001',
+      PhysicalSame: true,
+      MailingSameAsLegal: true,
+      ContactFirstName: 'John',
+      ContactLastName: 'Doe',
+      ContactPhoneNumber: '555-555-5555',
+      ContactEmailAddress: 'john.doe@acme.com',
+      WebsiteURL: 'https://acme.com',
+      CustomerServicePhoneNumber: '555-555-1234',
+      CustomerServiceEmailAddress: 'support@acme.com',
+      NoOwner: false,
+      Owner1FirstName: 'Jane',
+      Owner1LastName: 'Smith',
+      DateofBirth: '01/01/1980',
+      SocialSecurity: '000-00-0000',
+      Owner1Percent: '100',
+      Owner1HomeStreetAddress: '456 Owner Ln',
+      Owner1HomeCity: 'Gotham',
+      Owner1HomeState: 'NY',
+      Owner1HomeZIP: '10001',
+      SameAsOwner: true,
+      VisaMCMonthlyVolume: '50000',
+      HighestTransactionAmount: '1000',
+      AverageTransactionAmount: '50',
+      SalesProfileRetailPercentage: '100',
+      SalesProfileInternetPercentage: '0',
+      SalesProfileMOTOPercentage: '0',
+      SalesProfileOtherPercentage: '0',
+      SalesProfileStoredPercentage: '0',
+      CustomerProfileIndividualConsumers: '100',
+      CustomerProfileBusinesses: '0',
+      CustomerProfileGovernment: '0',
+      ProductDescription: 'Widgets and Gizmos',
+      RefundPolicyDescription: '30 days no questions asked',
+      AgentID: 'AG-999',
+      NameOnAccount: 'Acme Corp LLC',
+      BankRoutingNumber: '123456789',
+      BankAccountNumber: '987654321',
+      AgreementTerm: '36 Months',
+      AgreementSignatureOwner1Signature: 'Jane Smith',
+      AgreementSignatureOwner1Name: 'Jane Smith',
+      AgreementSignatureOwner1Date: new Date().toLocaleDateString('en-US'),
+      AgreementSignatureOfficerSignature: 'Jane Smith',
+      AgreementSignatureOfficerName: 'Jane Smith',
+      AgreementSignatureOfficerJobTitle: 'CEO',
+      AgreementSignatureOfficerDate: new Date().toLocaleDateString('en-US'),
+    }));
+    setValidationErrors({});
+  };
+
   // Handles text change & checkboxes toggle
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -447,11 +507,21 @@ export default function App() {
       )}
 
       {/* HEADER SECTION */}
-      <header className="app-header">
-        <h1 className="app-title">Merchant Application Form Filler</h1>
-        <p className="app-subtitle">
-          Complete the web form dashboard below to seamlessly overlay details onto your 10-page merchant processing agreement.
-        </p>
+      <header className="app-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div>
+          <h1 className="app-title">Merchant Application Form Filler</h1>
+          <p className="app-subtitle">
+            Complete the web form dashboard below to seamlessly overlay details onto your 10-page merchant processing agreement.
+          </p>
+        </div>
+        <button 
+          type="button" 
+          className="btn btn-secondary" 
+          onClick={handleFillDummyData}
+          style={{ whiteSpace: 'nowrap' }}
+        >
+          Fill Dummy Data
+        </button>
       </header>
 
       {/* PROFESSIONAL STEPPER NAVIGATION */}
@@ -585,8 +655,8 @@ export default function App() {
                     </button>
                     <div className="email-send-group">
                       <input 
-                        type="email" 
-                        placeholder="Customer Email" 
+                        type="text" 
+                        placeholder="Customer Emails (comma-separated)" 
                         className="form-input email-input" 
                         value={emailRecipient} 
                         onChange={(e) => setEmailRecipient(e.target.value)}
