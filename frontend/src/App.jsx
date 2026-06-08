@@ -310,27 +310,8 @@ export default function App() {
       errors.WarrantyDuration = 'Warranty duration is required';
     }
 
-    // Tab 7: Billing Information
-    if (!formData.NameOnAccount) errors.NameOnAccount = 'Bank account name is required';
-
-    if (!formData.BankRoutingNumber) {
-      errors.BankRoutingNumber = 'Routing number is required';
-    } else {
-      const routing = formData.BankRoutingNumber.replace(/\D/g, '');
-      if (routing.length !== 9) errors.BankRoutingNumber = 'Routing number must be exactly 9 digits';
-    }
-
-    if (!formData.BankAccountNumber) errors.BankAccountNumber = 'Account number is required';
-
-    // Tab 8: Equipment & Signatures
-    if (!formData.AgreementTerm) errors.AgreementTerm = 'Agreement term is required';
-    if (!formData.AgreementSignatureOwner1Signature) errors.AgreementSignatureOwner1Signature = 'Owner 1 signature name is required';
-    if (!formData.AgreementSignatureOwner1Name) errors.AgreementSignatureOwner1Name = 'Owner 1 printed name is required';
-    if (!formData.AgreementSignatureOwner1Date) errors.AgreementSignatureOwner1Date = 'Date is required';
-    if (!formData.AgreementSignatureOfficerSignature) errors.AgreementSignatureOfficerSignature = 'Officer signature name is required';
-    if (!formData.AgreementSignatureOfficerName) errors.AgreementSignatureOfficerName = 'Officer printed name is required';
-    if (!formData.AgreementSignatureOfficerJobTitle) errors.AgreementSignatureOfficerJobTitle = 'Job title is required';
-    if (!formData.AgreementSignatureOfficerDate) errors.AgreementSignatureOfficerDate = 'Date is required';
+    // Tab 7: Billing Information (Removed validation as it's filled by customer on page 2)
+    // Tab 8: Equipment & Signatures (Removed validation as it's filled by customer on page 2)
 
     setValidationErrors(errors);
     return Object.keys(errors).length === 0;
@@ -458,9 +439,7 @@ export default function App() {
       formData.LegalBusinessName, formData.DBA, formData.BusinessTaxID,
       formData.LegalStreetAddress, formData.LegalCity, formData.LegalZIP,
       formData.ContactFirstName, formData.ContactLastName, formData.ContactEmailAddress,
-      formData.WebsiteURL, formData.VisaMCMonthlyVolume, formData.ProductDescription,
-      formData.NameOnAccount, formData.BankRoutingNumber, formData.BankAccountNumber,
-      formData.AgreementSignatureOwner1Signature, formData.AgreementSignatureOfficerSignature
+      formData.WebsiteURL, formData.VisaMCMonthlyVolume, formData.ProductDescription
     ];
     const filled = fieldsToTrack.filter(f => f !== undefined && f !== null && String(f).trim() !== '').length;
     return Math.round((filled / fieldsToTrack.length) * 100);
