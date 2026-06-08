@@ -20,8 +20,7 @@ const TABS = [
   { id: 'equipment-services', name: 'Equipment & Sign', step: 8 }
 ];
 
-// ✅ FIX 1: Use environment variable for API URL with fallback
-const API_URL = process.env.REACT_APP_API_URL || 'https://merchant-backend-five.vercel.app';
+const API_URL = process.env.REACT_APP_API_URL || 'https:localhost:5000'; 
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('merchant-info');
@@ -389,9 +388,7 @@ export default function App() {
       emailFormData.append('email', targetEmail);
       emailFormData.append('pdfFile', blob, 'merchant_application.pdf');
 
-      // ✅ FIX 2: Use the API_URL constant defined at the top of the file
-      // ✅ FIX 3: Trailing slash added to avoid 308 redirect that breaks CORS
-      const response = await fetch(`${API_URL}/api/send-email/`, {
+      const response = await fetch(`${API_URL}/send-email/`, {
         method: 'POST',
         body: emailFormData,
       });

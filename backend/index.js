@@ -35,7 +35,6 @@ const createTransporter = async () => {
   }
 
   // Fallback for testing: Ethereal Email (fake SMTP service)
-  console.log('No SMTP credentials found in .env, generating Ethereal test account...');
   const testAccount = await nodemailer.createTestAccount();
   return nodemailer.createTransport({
     host: 'smtp.ethereal.email',
@@ -58,8 +57,6 @@ async function handleSendEmail(req, res) {
   try {
     const { email } = req.body;
     const file = req.file;
-
-    console.log('Email send request received:', { email, hasFile: !!file });
 
     if (!email || !file) {
       return res.status(400).json({ error: 'Missing email or PDF file.' });
@@ -86,14 +83,7 @@ async function handleSendEmail(req, res) {
       ],
     });
 
-    console.log('Message sent: %s', info.messageId);
-
-    const previewUrl = nodemailer.getTestMessageUrl(info);
-    if (previewUrl) {
-      console.log('Preview URL: %s', previewUrl);
-    }
-
-    res.json({ success: true, message: 'Email sent successfully', previewUrl });
+    res.json({ success: true, message: 'Email sent successfully' });
   } catch (error) {
     console.error('Error sending email:', error);
     res.status(500).json({ error: error.message || 'Failed to send email' });
