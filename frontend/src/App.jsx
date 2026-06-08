@@ -398,8 +398,8 @@ export default function App() {
       emailFormData.append('email', targetEmail);
       emailFormData.append('pdfFile', blob, 'merchant_application.pdf');
 
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-    const response = await fetch(`${apiUrl}/api/send-email/`, {
+    const apiUrl = 'https://merchant-backend-five.vercel.app';
+    const response = await fetch(`${apiUrl}/api/send-email`, {
         method: 'POST',
         body: emailFormData,
       });
