@@ -6,7 +6,14 @@ const nodemailer = require('nodemailer');
 const AdmZip = require('adm-zip');
 
 const app = express();
-app.use(cors());
+
+// Enable CORS for all origins (safe for this use case)
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  credentials: false
+}));
+
 app.use(express.json());
 
 // Set up multer to handle file uploads in memory
