@@ -389,7 +389,7 @@ export default function App() {
       emailFormData.append('email', targetEmail);
       emailFormData.append('pdfFile', blob, 'merchant_application.pdf');
 
-      const response = await fetch(`${API_URL}api/send-email/`, {
+      const response = await fetch(`${API_URL}/api/send-email/`, {
         method: 'POST',
         body: emailFormData,
       });
