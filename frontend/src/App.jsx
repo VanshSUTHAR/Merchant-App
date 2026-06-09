@@ -321,6 +321,8 @@ export default function App() {
       case 'equipment-services':
         // Tab 7 and 8 have no validation as they're filled by customer on page 2
         break;
+      default:
+        break;
     }
     return errors;
   };
